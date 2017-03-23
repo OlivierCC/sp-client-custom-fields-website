@@ -6,7 +6,7 @@ const Home = () => (
     <h2><span>The most comprehensive</span> and complete property pane custom fields library for the SharePoint Framework (SPFx)</h2>
             <div className="clr"></div>
             <p>
-              <img src="https://img.shields.io/badge/latest%20release-v1.2.4-blue.svg" className="noborder" alt="release"/>&nbsp;
+              <img src="https://img.shields.io/badge/latest%20release-v1.2.5-blue.svg" className="noborder" alt="release"/>&nbsp;
               <img src="https://img.shields.io/badge/npm-sp--client--custom--fields-red.svg" className="noborder" alt="npm"/>&nbsp;
               <img src="https://img.shields.io/badge/status-stable-green.svg" className="noborder" alt="status"/>&nbsp;
               <img src="https://img.shields.io/badge/license-MIT-yellow.svg" className="noborder" alt="mit"/>
@@ -61,7 +61,7 @@ gulp serve
             <p>
               This library is used by many projects of webparts for SharePoint Framework.
               If you want to see some Web Parts that use our components, we recommend the open source project called &nbsp;
-              <a href="https://github.com/OlivierCC/spfx-40-fantastics" target="_blank">"SPFx Fantastic 40"</a>. This project uses thhis lib to enhance the Web Parts editing experience.
+              <a href="https://github.com/OlivierCC/spfx-40-fantastics" target="_blank">"SPFx Fantastic 40"</a>. This project uses this lib to enhance the Web Parts editing experience.
             </p>
   </div>
 )

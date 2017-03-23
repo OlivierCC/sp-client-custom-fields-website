@@ -2,17 +2,17 @@ import React from 'react';
 import {
   Link
 } from 'react-router-dom'
-import Screenshot from '../images/PropertyFieldPeoplePicker.gif';
+import Screenshot from '../images/PropertyFieldGroupPicker.gif';
 
-const PropertyFieldPeoplePicker = () => (
+const PropertyFieldGroupPicker = () => (
   <div>
-    <h2>People Picker</h2>
+    <h2>Group Picker</h2>
 
     <p>
-      This component generates a People Picker property field in your client side web part for 
-      the SharePoint Framework. You can search and select users from your tenant directory.</p>
+      This component generates a Group Picker property field in your client side web part for 
+      the SharePoint Framework. You can search and select <strong>SharePoint OR Security Groups</strong> from your tenant directory.</p>
     <p>
-      <img src={Screenshot} width="606" alt="People Picker"/>
+      <img src={Screenshot} width="606" alt="Group Picker"/>
     </p>
 
     <h2>How to use this custom field in your project</h2>
@@ -25,17 +25,17 @@ const PropertyFieldPeoplePicker = () => (
       2. Create a new property for your web part as for example:
     </p>
     <pre>
-import &#123; IPropertyFieldPeople &#125; from 'sp-client-custom-fields/lib/PropertyFieldPeoplePicker';<br/>
+import &#123; IPropertyFieldGroup &#125; from 'sp-client-custom-fields/lib/PropertyFieldGroupPicker';<br/>
 <br/>
 export interface IMyWebPartProps &#123;<br/>
-&nbsp;&nbsp;people: IPropertyFieldPeople[];<br/>
+&nbsp;&nbsp;groups: IPropertyFieldGroup[];<br/>
 &#125;
     </pre>
     <p>
       3. In you web part file (for example MyWebPart.ts), import the custom field:
     </p>
     <pre>
-import &#123; <strong>PropertyFieldPeoplePicker</strong> &#125; from 'sp-client-custom-fields/lib/PropertyFieldPeoplePicker';
+import &#123; <strong>PropertyFieldGroupPicker, IGroupType</strong> &#125; from 'sp-client-custom-fields/lib/PropertyFieldGroupPicker';
     </pre>
     <p>
       4. Add the custom field in your Web Part property pane configuration:
@@ -52,16 +52,17 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupName: strings.BasicGroupName,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupFields: [<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyFieldPeoplePicker</strong>('people', &#123;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label: 'Select users',<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialData: this.properties.people,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyFieldGroupPicker</strong>('groups', &#123;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label: 'Select groups',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialData: this.properties.groups,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allowDuplicate: false,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupType: IGroupType.Security,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context: this.context,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: this.properties,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onGetErrorMessage: null,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deferredValidationTime: 0,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'peoplePickerFieldId'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'groupsPickerFieldId'<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
@@ -96,14 +97,20 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
         <tr>
           <td>initialData</td>
           <td>no</td>
-          <td>IPropertyFieldPeople[]</td>
+          <td>IPropertyFieldGroup[]</td>
           <td>Defines the selected values by default.</td>
         </tr>
         <tr>
           <td>allowDuplicate</td>
           <td>no</td>
           <td>boolean</td>
-          <td>Allow to select the same persona many times. Default is false.</td>
+          <td>Allow to select the same group many times. Default is false.</td>
+        </tr>
+        <tr>
+          <td>groupType</td>
+          <td>yes</td>
+          <td>IGroupType</td>
+          <td>Defines if you want to select Security groups or SharePoint groups. Value can be IGroupType.Security or IGroupType.SharePoint.</td>
         </tr>
         <tr>
           <td>key</td>
@@ -146,14 +153,14 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
     </table>
 
     <p>
-        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/modules/_propertyfieldpeoplepicker_.html">
+        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/modules/_propertyfieldgrouppicker_.html">
         View the complete custom field API documentation</a>
       </p>
 
-      <h2>IPropertyFieldPeople Properties</h2>
+      <h2>IPropertyFieldGroup Properties</h2>
 
       <p>
-        A user object contains the following properties:
+        A group object contains the following properties:
       </p>
 
       <table cellSpacing="0" cellPadding="0">
@@ -166,45 +173,58 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
         </thead>
         <tbody>
           <tr>
-            <td>email</td>
+            <td>id</td>
             <td>string</td>
-            <td>User's email</td>
-          </tr>
-          <tr>
-            <td>login</td>
-            <td>string</td>
-            <td>User's login</td>
+            <td>Group's ID</td>
           </tr>
           <tr>
             <td>fullName</td>
             <td>string</td>
-            <td>User's full name</td>
+            <td>Group's full name</td>
           </tr>
           <tr>
-            <td>imageUrl</td>
+            <td>login</td>
             <td>string</td>
-            <td>User's picture</td>
+            <td>Group's login</td>
           </tr>
           <tr>
-            <td>jobTitle</td>
+            <td>description</td>
             <td>string</td>
-            <td>User's job title</td>
-          </tr>
-          <tr>
-            <td>initials</td>
-            <td>string</td>
-            <td>User's initials</td>
+            <td>Group's description</td>
           </tr>
         </tbody>
       </table>
 
       <p>
-        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/interfaces/_propertyfieldpeoplepicker_.ipropertyfieldpeople.html">
+        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/interfaces/_propertyfieldgrouppicker_.ipropertyfieldgroup.html">
         View the complete custom field API documentation</a>
       </p>
 
+      <h2>Return Values</h2>
+
+      <p>
+        If you are searching <strong>Security Groups</strong>, a returned group object will contain properties as followed:
+      </p>
+
+      <pre>
+FullName : Everyone except external users<br/>
+Description: <br/>
+Login: TenantAllUsers<br/>
+ID: c:0-.f|rolemanager|spo-grid-all-users/380cece3-b340-4257-8844-b1ed0f6f60b9<br/>
+      </pre>
+
+      <p>
+        If you are searching <strong>SharePoint Groups</strong>, a returned group object will contain properties as followed:
+      </p>
+
+      <pre>
+FullName : Excel Services Viewers<br/>
+Description: Excel Services Viewers<br/>
+Login: Excel Services Viewers<br/>
+ID: 3<br/>
+      </pre>
 
   </div>
 )
 
-export default PropertyFieldPeoplePicker;
+export default PropertyFieldGroupPicker;

@@ -36,6 +36,7 @@ import PropertyFieldSPListPicker from './PropertyFieldSPListPicker';
 import PropertyFieldSPListMultiplePicker from './PropertyFieldSPListMultiplePicker';
 import PropertyFieldSPListQuery from './PropertyFieldSPListQuery';
 import PropertyFieldSPFolderPicker from './PropertyFieldSPFolderPicker';
+import PropertyFieldGroupPicker from './PropertyFieldGroupPicker';
 
 const App = () => (
   <Router>
@@ -89,7 +90,8 @@ const App = () => (
                <Route path="/sp-client-custom-fields/propertyfieldsplistpicker" component={PropertyFieldSPListPicker}/>
                <Route path="/sp-client-custom-fields/propertyfieldsplistmultiplepicker" component={PropertyFieldSPListMultiplePicker}/>
                <Route path="/sp-client-custom-fields/propertyfieldsplistquery" component={PropertyFieldSPListQuery}/>
-               <Route path="/sp-client-custom-fields/propertyfieldspfolderquery" component={PropertyFieldSPFolderPicker}/>
+               <Route path="/sp-client-custom-fields/propertyfieldspfolderpicker" component={PropertyFieldSPFolderPicker}/>
+               <Route path="/sp-client-custom-fields/propertyfieldgrouppicker" component={PropertyFieldGroupPicker}/>
             </div>
           </div>
           <div className="sidebar">
@@ -142,12 +144,13 @@ const App = () => (
               <div className="clr"></div>
               <ul className="sb_menu">
                 <li><Link to="/sp-client-custom-fields/propertyfieldpeoplepicker">People Picker</Link></li>
+                <li><Link to="/sp-client-custom-fields/propertyfieldgrouppicker">Group Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldpicturepicker">Picture Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfielddocumentepicker">Document Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsplistpicker">SharePoint List Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsplistmultiplepicker">Multiple SharePoint Lists Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsplistquery">SharePoint List Query</Link></li>
-                <li><Link to="/sp-client-custom-fields/propertyfieldspfolderquery">Folder Picker</Link></li>
+                <li><Link to="/sp-client-custom-fields/propertyfieldspfolderpicker">Folder Picker</Link></li>
               </ul>
             </div>
           </div>
