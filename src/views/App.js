@@ -2,7 +2,8 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  browserHistory
 } from 'react-router-dom'
 
 import Home from './Home';
@@ -39,7 +40,7 @@ import PropertyFieldSPFolderPicker from './PropertyFieldSPFolderPicker';
 import PropertyFieldGroupPicker from './PropertyFieldGroupPicker';
 
 const App = () => (
-  <Router>
+  <Router history={browserHistory}>
     <div className="main">
     <div className="header">
       <div className="header_resize">
