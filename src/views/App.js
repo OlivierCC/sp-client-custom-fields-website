@@ -38,6 +38,7 @@ import PropertyFieldSPListMultiplePicker from './PropertyFieldSPListMultiplePick
 import PropertyFieldSPListQuery from './PropertyFieldSPListQuery';
 import PropertyFieldSPFolderPicker from './PropertyFieldSPFolderPicker';
 import PropertyFieldGroupPicker from './PropertyFieldGroupPicker';
+import PropertyFieldNumericInput from './PropertyFieldNumericInput';
 
 const App = () => (
   <Router history={browserHistory}>
@@ -93,6 +94,7 @@ const App = () => (
                <Route path="/sp-client-custom-fields/propertyfieldsplistquery" component={PropertyFieldSPListQuery}/>
                <Route path="/sp-client-custom-fields/propertyfieldspfolderpicker" component={PropertyFieldSPFolderPicker}/>
                <Route path="/sp-client-custom-fields/propertyfieldgrouppicker" component={PropertyFieldGroupPicker}/>
+               <Route path="/sp-client-custom-fields/propertyfieldnumericinput" component={PropertyFieldNumericInput}/>
             </div>
           </div>
           <div className="sidebar">
@@ -120,6 +122,7 @@ const App = () => (
                 <li><Link to="/sp-client-custom-fields/propertyfielddatepicker">Date Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfielddatetimepicker">DateTime Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldpassword">Password</Link></li>
+                <li><Link to="/sp-client-custom-fields/propertyfieldnumericinput">Numeric Input</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldrichtextbox">Rich TextBox</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldtagpicker">Tags Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldmaskedinput">Masked Input</Link></li>

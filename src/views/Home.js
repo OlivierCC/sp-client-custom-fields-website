@@ -6,7 +6,7 @@ const Home = () => (
     <h2><span>The most comprehensive</span> and complete property pane custom fields library for the SharePoint Framework (SPFx)</h2>
             <div className="clr"></div>
             <p>
-              <img src="https://img.shields.io/badge/latest%20release-v1.2.5-blue.svg" className="noborder" alt="release"/>&nbsp;
+              <img src="https://img.shields.io/badge/latest%20release-v1.2.7-blue.svg" className="noborder" alt="release"/>&nbsp;
               <img src="https://img.shields.io/badge/npm-sp--client--custom--fields-red.svg" className="noborder" alt="npm"/>&nbsp;
               <img src="https://img.shields.io/badge/status-stable-green.svg" className="noborder" alt="status"/>&nbsp;
               <img src="https://img.shields.io/badge/license-MIT-yellow.svg" className="noborder" alt="mit"/>
@@ -56,6 +56,12 @@ gulp serve
             </p>
             <p>
               <img src={Logo} width="600" alt="Logo" />
+            </p>
+            <h2>Minimal Sample Kit</h2>
+            <p>
+              You can test this kit with a minimal SharePoint Framework Web Part, available 
+              on Github at the following address: &nbsp;
+              <a href="https://github.com/OlivierCC/sp-client-custom-fields-sample" target="_blank">https://github.com/OlivierCC/sp-client-custom-fields-sample</a>
             </p>
             <h2>See it in action</h2>
             <p>
