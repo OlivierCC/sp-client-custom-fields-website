@@ -2,17 +2,17 @@ import React from 'react';
 import {
   Link
 } from 'react-router-dom'
-import Screenshot from '../images/PropertyFieldPassword.gif';
+import Screenshot from '../images/PropertyFieldAutoComplete.gif';
 
-const PropertyFieldPassword = () => (
+const PropertyFieldAutoComplete = () => (
   <div>
-    <h2>Password</h2>
+    <h2>Auto Complete TextBox</h2>
 
     <p>
-      This component generates a password text input property field in your client side web part for 
+      This component generates an auto-complete text input property field in your client side web part for 
       the SharePoint Framework:</p>
     <p>
-      <img src={Screenshot} width="606" alt="Password"/>
+      <img src={Screenshot} width="606" alt="Auto Complete"/>
     </p>
 
     <h2>How to use this custom field in your project</h2>
@@ -26,14 +26,14 @@ const PropertyFieldPassword = () => (
     </p>
     <pre>
 export interface IMyWebPartProps &#123;<br/>
-&nbsp;&nbsp;password: string;<br/>
+&nbsp;&nbsp;text: string;<br/>
 &#125;
     </pre>
     <p>
       3. In you web part file (for example MyWebPart.ts), import the custom field:
     </p>
     <pre>
-import &#123; <strong>PropertyFieldPassword</strong> &#125; from 'sp-client-custom-fields/lib/PropertyFieldPassword';
+import &#123; <strong>PropertyFieldAutoComplete</strong> &#125; from 'sp-client-custom-fields/lib/PropertyFieldAutoComplete';
     </pre>
     <p>
       4. Add the custom field in your Web Part property pane configuration:
@@ -50,16 +50,29 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupName: strings.BasicGroupName,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupFields: [<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyFieldPassword</strong>('password', &#123;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label: 'Select a password',<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeHolder: 'Select a password',<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialValue: this.properties.password,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyFieldAutoComplete</strong>('text', &#123;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label: 'Select a state',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeHolder: 'Select a state',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suggestions: [<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Alabama",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Alaska",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Arizona",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Arkansas",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"California",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Colorado",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Connecticut",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Delaware",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Florida",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Georgia",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Hawaii"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialValue: this.properties.text,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disabled: false,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: this.properties,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onGetErrorMessage: null,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deferredValidationTime: 0,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'passwordFieldId'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'autoCompleteFieldId'<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
@@ -95,7 +108,13 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
           <td>placeHolder</td>
           <td>no</td>
           <td>string</td>
-          <td>Input's default place holder text.</td>
+          <td>Input control default place holder text.</td>
+        </tr>
+        <tr>
+          <td>suggestions</td>
+          <td>no</td>
+          <td>string[]</td>
+          <td>List of strings to suggest to the user</td>
         </tr>
         <tr>
           <td>initialValue</td>
@@ -144,11 +163,11 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
     </table>
 
     <p>
-        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/modules/_propertyfieldpassword_.html">
+        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/modules/_propertyfieldautocomplete_.html">
         View the complete custom field API documentation</a>
       </p>
 
   </div>
 )
 
-export default PropertyFieldPassword;
+export default PropertyFieldAutoComplete;

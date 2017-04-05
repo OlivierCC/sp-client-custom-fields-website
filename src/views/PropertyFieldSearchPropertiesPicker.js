@@ -2,17 +2,17 @@ import React from 'react';
 import {
   Link
 } from 'react-router-dom'
-import Screenshot from '../images/PropertyFieldPassword.gif';
+import Screenshot from '../images/PropertyFieldSearchPropertiesPicker.gif';
 
-const PropertyFieldPassword = () => (
+const PropertyFieldSearchPropertiesPicker = () => (
   <div>
-    <h2>Password</h2>
+    <h2>Search Properties Picker</h2>
 
     <p>
-      This component generates a password text input property field in your client side web part for 
-      the SharePoint Framework:</p>
+      This component generates a SharePoint search properties Picker in your client side web part for 
+      the SharePoint Framework, with autocomplete feature:</p>
     <p>
-      <img src={Screenshot} width="606" alt="Password"/>
+      <img src={Screenshot} width="606" alt="Search Properties Picker"/>
     </p>
 
     <h2>How to use this custom field in your project</h2>
@@ -26,14 +26,14 @@ const PropertyFieldPassword = () => (
     </p>
     <pre>
 export interface IMyWebPartProps &#123;<br/>
-&nbsp;&nbsp;password: string;<br/>
+&nbsp;&nbsp;properties: string[];<br/>
 &#125;
     </pre>
     <p>
       3. In you web part file (for example MyWebPart.ts), import the custom field:
     </p>
     <pre>
-import &#123; <strong>PropertyFieldPassword</strong> &#125; from 'sp-client-custom-fields/lib/PropertyFieldPassword';
+import &#123; <strong>PropertyFieldSearchPropertiesPicker</strong> &#125; from 'sp-client-custom-fields/lib/PropertyFieldSearchPropertiesPicker';
     </pre>
     <p>
       4. Add the custom field in your Web Part property pane configuration:
@@ -50,16 +50,18 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupName: strings.BasicGroupName,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupFields: [<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyFieldPassword</strong>('password', &#123;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label: 'Select a password',<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeHolder: 'Select a password',<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialValue: this.properties.password,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyFieldSearchPropertiesPicker</strong>('properties', &#123;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label: 'Select search properties',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedProperties: this.properties.properties,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loadingText: 'Loading...',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noResultsFoundText: 'No properties found',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suggestionsHeaderText: 'Suggested Properties',<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disabled: false,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: this.properties,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onGetErrorMessage: null,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deferredValidationTime: 0,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'passwordFieldId'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'searchPropertiesFieldId'<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
@@ -92,16 +94,28 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
           <td>Defines the label displayed on top of the control.</td>
         </tr>
         <tr>
-          <td>placeHolder</td>
+          <td>selectedProperties</td>
           <td>no</td>
-          <td>string</td>
-          <td>Input's default place holder text.</td>
+          <td>string[]</td>
+          <td>Defines the selected properties by default.</td>
         </tr>
         <tr>
-          <td>initialValue</td>
-          <td>no</td>
+          <td>loadingText</td>
+          <td>yes</td>
           <td>string</td>
-          <td>Defines the selected value by default.</td>
+          <td>Text to display during loading.</td>
+        </tr>
+        <tr>
+          <td>noResultsFoundText</td>
+          <td>yes</td>
+          <td>string</td>
+          <td>Text to display when no results found.</td>
+        </tr>
+        <tr>
+          <td>suggestionsHeaderText</td>
+          <td>yes</td>
+          <td>string</td>
+          <td>Suggestions Header Text.</td>
         </tr>
         <tr>
           <td>disabled</td>
@@ -142,13 +156,13 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
         </tr>
       </tbody>
     </table>
-
+    
     <p>
-        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/modules/_propertyfieldpassword_.html">
+        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/modules/_propertyfieldsearchpropertiespicker_.html">
         View the complete custom field API documentation</a>
       </p>
 
   </div>
 )
 
-export default PropertyFieldPassword;
+export default PropertyFieldSearchPropertiesPicker;

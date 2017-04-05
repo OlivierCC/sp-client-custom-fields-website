@@ -39,6 +39,9 @@ import PropertyFieldSPListQuery from './PropertyFieldSPListQuery';
 import PropertyFieldSPFolderPicker from './PropertyFieldSPFolderPicker';
 import PropertyFieldGroupPicker from './PropertyFieldGroupPicker';
 import PropertyFieldNumericInput from './PropertyFieldNumericInput';
+import PropertyFieldAutoComplete from './PropertyFieldAutoComplete';
+import PropertyFieldSearchPropertiesPicker from './PropertyFieldSearchPropertiesPicker';
+import PropertyFieldOfficeVideoPicker from './PropertyFieldOfficeVideoPicker';
 
 const App = () => (
   <Router history={browserHistory}>
@@ -95,6 +98,9 @@ const App = () => (
                <Route path="/sp-client-custom-fields/propertyfieldspfolderpicker" component={PropertyFieldSPFolderPicker}/>
                <Route path="/sp-client-custom-fields/propertyfieldgrouppicker" component={PropertyFieldGroupPicker}/>
                <Route path="/sp-client-custom-fields/propertyfieldnumericinput" component={PropertyFieldNumericInput}/>
+               <Route path="/sp-client-custom-fields/propertyfieldautocomplete" component={PropertyFieldAutoComplete}/>
+               <Route path="/sp-client-custom-fields/propertyfieldsearchpropertiespicker" component={PropertyFieldSearchPropertiesPicker}/>
+               <Route path="/sp-client-custom-fields/propertyfieldofficevideopicker" component={PropertyFieldOfficeVideoPicker}/>
             </div>
           </div>
           <div className="sidebar">
@@ -119,6 +125,7 @@ const App = () => (
               <h2 className="star"><span>Text Inputs</span></h2>
               <div className="clr"></div>
               <ul className="sb_menu">
+                <li><Link to="/sp-client-custom-fields/propertyfieldautocomplete">Auto Complete</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfielddatepicker">Date Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfielddatetimepicker">DateTime Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldpassword">Password</Link></li>
@@ -151,6 +158,8 @@ const App = () => (
                 <li><Link to="/sp-client-custom-fields/propertyfieldgrouppicker">Group Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldpicturepicker">Picture Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfielddocumentepicker">Document Picker</Link></li>
+                <li><Link to="/sp-client-custom-fields/propertyfieldofficevideopicker">Office Video Picker</Link></li>
+                <li><Link to="/sp-client-custom-fields/propertyfieldsearchpropertiespicker">Search Properties Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsplistpicker">SharePoint List Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsplistmultiplepicker">Multiple SharePoint Lists Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsplistquery">SharePoint List Query</Link></li>

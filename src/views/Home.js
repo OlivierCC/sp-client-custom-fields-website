@@ -6,7 +6,7 @@ const Home = () => (
     <h2><span>The most comprehensive</span> and complete property pane custom fields library for the SharePoint Framework (SPFx)</h2>
             <div className="clr"></div>
             <p>
-              <img src="https://img.shields.io/badge/latest%20release-v1.2.8-blue.svg" className="noborder" alt="release"/>&nbsp;
+              <img src="https://img.shields.io/badge/latest%20release-v1.3.1-blue.svg" className="noborder" alt="release"/>&nbsp;
               <img src="https://img.shields.io/badge/npm-sp--client--custom--fields-red.svg" className="noborder" alt="npm"/>&nbsp;
               <img src="https://img.shields.io/badge/status-stable-green.svg" className="noborder" alt="status"/>&nbsp;
               <img src="https://img.shields.io/badge/license-MIT-yellow.svg" className="noborder" alt="mit"/>

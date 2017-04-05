@@ -2,17 +2,17 @@ import React from 'react';
 import {
   Link
 } from 'react-router-dom'
-import Screenshot from '../images/PropertyFieldPassword.gif';
+import Screenshot from '../images/PropertyFieldOfficeVideoPicker.gif';
 
-const PropertyFieldPassword = () => (
+const PropertyFieldOfficeVideoPicker = () => (
   <div>
-    <h2>Password</h2>
+    <h2>Office Video Picker</h2>
 
     <p>
-      This component generates a password text input property field in your client side web part for 
-      the SharePoint Framework:</p>
+      This component generates an Office 365 Video Picker property field in your client side web part for 
+      the SharePoint Framework. With this custom field, you can select a video from the Office Video channels.</p>
     <p>
-      <img src={Screenshot} width="606" alt="Password"/>
+      <img src={Screenshot} width="606" alt="Office Video Picker"/>
     </p>
 
     <h2>How to use this custom field in your project</h2>
@@ -26,14 +26,14 @@ const PropertyFieldPassword = () => (
     </p>
     <pre>
 export interface IMyWebPartProps &#123;<br/>
-&nbsp;&nbsp;password: string;<br/>
+&nbsp;&nbsp;video: string;<br/>
 &#125;
     </pre>
     <p>
       3. In you web part file (for example MyWebPart.ts), import the custom field:
     </p>
     <pre>
-import &#123; <strong>PropertyFieldPassword</strong> &#125; from 'sp-client-custom-fields/lib/PropertyFieldPassword';
+import &#123; <strong>PropertyFieldOfficeVideoPicker</strong> &#125; from 'sp-client-custom-fields/lib/PropertyFieldOfficeVideoPicker';
     </pre>
     <p>
       4. Add the custom field in your Web Part property pane configuration:
@@ -50,16 +50,18 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupName: strings.BasicGroupName,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupFields: [<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyFieldPassword</strong>('password', &#123;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label: 'Select a password',<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeHolder: 'Select a password',<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialValue: this.properties.password,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>PropertyFieldOfficeVideoPicker</strong>('video', &#123;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label: 'Select a video',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;panelTitle: 'Select a video',<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialValue: this.properties.video,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readOnly: true,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disabled: false,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: this.properties,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context: this.context,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onGetErrorMessage: null,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deferredValidationTime: 0,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'passwordFieldId'<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'officeVideoPickerFieldId'<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
@@ -92,16 +94,22 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
           <td>Defines the label displayed on top of the control.</td>
         </tr>
         <tr>
-          <td>placeHolder</td>
-          <td>no</td>
+          <td>panelTitle</td>
+          <td>yes</td>
           <td>string</td>
-          <td>Input's default place holder text.</td>
+          <td>Defines the panel's title.</td>
         </tr>
         <tr>
           <td>initialValue</td>
           <td>no</td>
           <td>string</td>
           <td>Defines the selected value by default.</td>
+        </tr>
+        <tr>
+          <td>readOnly</td>
+          <td>no</td>
+          <td>boolean</td>
+          <td>Whether the document path can be edit manually or not. Default is true.</td>
         </tr>
         <tr>
           <td>disabled</td>
@@ -128,6 +136,12 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
           <td>Defines the Web Part properties. You must always map this property to the properties collection of your Web Part object.</td>
         </tr>
         <tr>
+          <td>context</td>
+          <td>yes</td>
+          <td>IWebPartContext</td>
+          <td>Defines the Web Part context.</td>
+        </tr>
+        <tr>
           <td>onGetErrorMessage</td>
           <td>no</td>
           <td>function</td>
@@ -144,11 +158,11 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
     </table>
 
     <p>
-        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/modules/_propertyfieldpassword_.html">
+        <a href="https://oliviercc.github.io/sp-client-custom-fields/docs/modules/_propertyfieldofficevideopicker_.html">
         View the complete custom field API documentation</a>
       </p>
 
   </div>
 )
 
-export default PropertyFieldPassword;
+export default PropertyFieldOfficeVideoPicker;
