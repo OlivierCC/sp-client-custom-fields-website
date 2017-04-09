@@ -58,25 +58,29 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: this.properties.customList,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headerText: "Manage News",<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fields: [<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'News Title', required: true, type: CustomListFieldType.string &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Sub title', required: true, type: CustomListFieldType.string &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Link', required: false, type: CustomListFieldType.string, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Order', required: true, type: CustomListFieldType.number &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Active', required: false, type: CustomListFieldType.boolean &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Start Date', required: false, type: CustomListFieldType.date, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'End Date', required: false, type: CustomListFieldType.date, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Picture', required: false, type: CustomListFieldType.picture, hidden: true &#125;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'NewsTitle', title: 'News Title', required: true, type: CustomListFieldType.string &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'SubTitle', title: 'Sub title', required: true, type: CustomListFieldType.string &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Link', title: 'Link', required: false, type: CustomListFieldType.string, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Order', title: 'Order', required: true, type: CustomListFieldType.number &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Active', title: 'Active', required: false, type: CustomListFieldType.boolean &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'StartDate', title: 'Start Date', required: false, type: CustomListFieldType.date, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'EndDate', title: 'End Date', required: false, type: CustomListFieldType.date, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Picture', title: 'Picture', required: false, type: CustomListFieldType.picture, hidden: true &#125;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Examples of additional field types<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Font', required: false, type: CustomListFieldType.font, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Font size', required: false, type: CustomListFieldType.fontSize, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Icon', required: false, type: CustomListFieldType.icon, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Password', required: false, type: CustomListFieldType.password, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Users', required: false, type: CustomListFieldType.users, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Color', required: false, type: CustomListFieldType.color, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'List', required: false, type: CustomListFieldType.list, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Picture', required: false, type: CustomListFieldType.picture, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Document', required: false, type: CustomListFieldType.document, hidden: true &#125;,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; title: 'Folder', required: false, type: CustomListFieldType.folder, hidden: true &#125;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Font', title: 'Font', required: false, type: CustomListFieldType.font, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'FontSize', title: 'Font size', required: false, type: CustomListFieldType.fontSize, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Icon', title: 'Icon', required: false, type: CustomListFieldType.icon, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Password', title: 'Password', required: false, type: CustomListFieldType.password, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Users', title: 'Users', required: false, type: CustomListFieldType.users, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Color', title: 'Color', required: false, type: CustomListFieldType.color, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'List', title: 'List', required: false, type: CustomListFieldType.list, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Picture', title: 'Picture', required: false, type: CustomListFieldType.picture, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Document', title: 'Document', required: false, type: CustomListFieldType.document, hidden: true &#125;,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Color2', title: 'Color', required: false, type: CustomListFieldType.colorMini, hidden: true &#125;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Stars', title: 'Stars', required: false, type: CustomListFieldType.stars, hidden: true &#125;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Groups', title: 'Groups', required: false, type: CustomListFieldType.sharePointGroups, hidden: true &#125;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'SecGroups', title: 'SecGroups', required: false, type: CustomListFieldType.securityGroups, hidden: true &#125;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123; id: 'Video', title: 'Video', required: false, type: CustomListFieldType.officeVideo, hidden: true &#125;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disabled: false,<br/>
@@ -187,6 +191,11 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
       </thead>
       <tbody>
         <tr>
+          <td>id</td>
+          <td>string</td>
+          <td>Field's unique ID</td>
+        </tr>
+        <tr>
           <td>title</td>
           <td>string</td>
           <td>Field's title</td>
@@ -213,13 +222,20 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration &#123;<br/>
 
     <p>
         The PropertyFieldCustomList field returns an instance of an objects collection. 
-        These objects are formed as you define in the fields property. 
+        These objects are formed as you define in the fields property (id: value). 
         For the previous code sample, the value of the field will be a JSON representation of a collection formatted like this:
     </p>
 
     <pre>
-[&#123;"News Title":"Praesent finibus consectetur elit","Sub title":"Maecenas egestas nulla non ex consectetur, et porta quam bibendum. Donec maximus quis nulla","Link":"http://www.microsoft.com","Order":"2","Active":"true","Start Date":"Thu Sep 08 2016","End Date":"Thu Oct 20 2016","Picture":""&#125;,&#123;"News Title":"Duis lobortis, augue eget auctor","Sub title":"Nullam sollicitudin elementum erat id commodo. Integer et vehicula diam","Link":"http://","Order":"1","Active":"true","Start Date":"Mon Sep 05 2016","End Date":"","Picture":""&#125;,&#123;"News Title":"Nunc vel consectetur turpis","Sub title":" Ut nec diam a nisl mollis porta. Nam pharet","Link":"","Order":"3","Active":"","Start Date":"","End Date":"","Picture":""&#125;,&#123;"News Title":"Duis posuere tempus neque","Sub title":"esque mollis arcu. Aenean leo ligula, ullamcorpe","Link":"","Order":"4","Active":"false","Start Date":"","End Date":"","Picture":""&#125;]
+[&#123;"NewsTitle":"Praesent finibus consectetur elit","SubTitle":"Maecenas egestas nulla non ex consectetur, et porta quam bibendum. Donec maximus quis nulla","Link":"http://www.microsoft.com","Order":"2","Active":"true","StartDate":"Thu Sep 08 2016","EndDate":"Thu Oct 20 2016","Picture":""&#125;,&#123;"NewsTitle":"Duis lobortis, augue eget auctor","SubTitle":"Nullam sollicitudin elementum erat id commodo. Integer et vehicula diam","Link":"http://","Order":"1","Active":"true","StartDate":"Mon Sep 05 2016","EndDate":"","Picture":""&#125;,&#123;"NewsTitle":"Nunc vel consectetur turpis","SubTitle":" Ut nec diam a nisl mollis porta. Nam pharet","Link":"","Order":"3","Active":"","StartDate":"","EndDate":"","Picture":""&#125;,&#123;"NewsTitle":"Duis posuere tempus neque","SubTitle":"esque mollis arcu. Aenean leo ligula, ullamcorpe","Link":"","Order":"4","Active":"false","StartDate":"","EndDate":"","Picture":""&#125;]
     </pre>
+
+    <h2>Warning</h2>
+
+    <p>
+If you were using this component before version 1.3.2 the 'id' field did not exist. We recommend that you use the same value with the fields that the fields 'title'. This way, you can be sure that the data entered in your Web parts will be still usable.
+    </p>
+
   </div>
 )
 
