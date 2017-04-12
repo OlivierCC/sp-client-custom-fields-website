@@ -42,6 +42,7 @@ import PropertyFieldNumericInput from './PropertyFieldNumericInput';
 import PropertyFieldAutoComplete from './PropertyFieldAutoComplete';
 import PropertyFieldSearchPropertiesPicker from './PropertyFieldSearchPropertiesPicker';
 import PropertyFieldOfficeVideoPicker from './PropertyFieldOfficeVideoPicker';
+import PropertyFieldTermSetPicker from './PropertyFieldTermSetPicker';
 
 const App = () => (
   <Router history={browserHistory}>
@@ -55,7 +56,7 @@ const App = () => (
           <ul>
             <li><Link to="/sp-client-custom-fields">Home</Link></li>
             <li><a href="https://oliviercc.github.io/sp-client-custom-fields/docs/index.html">API Documentation</a></li>
-            <li><a href="https://github.com/OlivierCC/sp-client-custom-fields">Github (source code)</a></li>
+            <li><a href="https://github.com/OlivierCC/sp-client-custom-fields">GitHub (Source Code)</a></li>
           </ul>
         </div>
         <div className="clr"></div>
@@ -101,6 +102,7 @@ const App = () => (
                <Route path="/sp-client-custom-fields/propertyfieldautocomplete" component={PropertyFieldAutoComplete}/>
                <Route path="/sp-client-custom-fields/propertyfieldsearchpropertiespicker" component={PropertyFieldSearchPropertiesPicker}/>
                <Route path="/sp-client-custom-fields/propertyfieldofficevideopicker" component={PropertyFieldOfficeVideoPicker}/>
+               <Route path="/sp-client-custom-fields/propertyfieldtermsetpicker" component={PropertyFieldTermSetPicker}/>
             </div>
           </div>
           <div className="sidebar">
@@ -160,6 +162,7 @@ const App = () => (
                 <li><Link to="/sp-client-custom-fields/propertyfielddocumentepicker">Document Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldofficevideopicker">Office Video Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsearchpropertiespicker">Search Properties Picker</Link></li>
+                <li><Link to="/sp-client-custom-fields/propertyfieldtermsetpicker">Term Set Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsplistpicker">SharePoint List Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsplistmultiplepicker">Multiple SharePoint Lists Picker</Link></li>
                 <li><Link to="/sp-client-custom-fields/propertyfieldsplistquery">SharePoint List Query</Link></li>
